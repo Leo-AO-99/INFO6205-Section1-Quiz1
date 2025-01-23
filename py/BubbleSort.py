@@ -1,4 +1,4 @@
-def bubble_sort(arr):
+def bubble_sort(arr: list[int]) -> list[int]:
     """
     Bubble sort implementation to sort a list in ascending order.
 
@@ -18,5 +18,10 @@ def bubble_sort(arr):
         """
         arr[i], arr[j] = arr[j], arr[i]
 
-    # TODO: Implement the bubble sort algorithm below.
-    pass
+    length = len(arr)
+    
+    for i in range(length):
+        for j in range(0, length - i - 1):
+            if arr[j] > arr[j + 1]:
+                swap(j, j + 1)
+    return arr
